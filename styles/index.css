@@ -33,4 +33,8 @@ input:focus {
   background-color: lightblue;
 }
 
+.wrong{
+  background-color: rgb(255, 177, 172);
+}
+
 /*# sourceMappingURL=index.css.map */
