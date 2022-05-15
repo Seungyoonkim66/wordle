@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "node-sass": "^7.0.1",
     "ts-node": "^10.7.0"
+  },
+  "scripts": {
+    "dev" : "tsc &&  node-sass -w styles/index.scss dist/index.css"
   }
 }
