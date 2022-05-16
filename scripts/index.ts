@@ -38,8 +38,10 @@ function play (answerLength:number):void {
         if(data != null && data.length > 0){
             const word:string = data[0];
             addRound(playBoard, activeRound, word);
-            answerSheet.append(word);
+            
+            answerSheet.innerText = word;
             console.log(word);
+
         }
     })
     .catch((res) => {
