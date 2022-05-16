@@ -41,7 +41,7 @@ input:focus {
 }
 
 /* 제출 버튼 */
-.submit-btn {
+.custom-btn1 {
   appearance: none;
   background-color: #FAFBFC;
   border: 1px solid rgba(27, 31, 35, 0.15);
@@ -67,34 +67,34 @@ input:focus {
   word-wrap: break-word;
 }
 
-.submit-btn:hover {
+.custom-btn1:hover {
   background-color: #F3F4F6;
   text-decoration: none;
   transition-duration: 0.1s;
 }
 
-.submit-btn:disabled {
+.custom-btn1:disabled {
   background-color: #FAFBFC;
   border-color: rgba(27, 31, 35, 0.15);
   color: #959DA5;
   cursor: default;
 }
 
-.submit-btn:active {
+.custom-btn1:active {
   background-color: #EDEFF2;
   box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
   transition: none 0s;
 }
 
-.submit-btn:focus {
+.custom-btn1:focus {
   outline: 1px transparent;
 }
 
-.submit-btn:before {
+.custom-btn1:before {
   display: none;
 }
 
-.submit-btn:-webkit-details-marker {
+.custom-btn1:-webkit-details-marker {
   display: none;
 }
 

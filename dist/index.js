@@ -11,6 +11,13 @@ const getFinishModalElementId = (elementName) => {
     }
     return id;
 };
+const getAnswerModalElementId = (elementName) => {
+    let id = "answer-modal";
+    if (elementName != null) {
+        id = id + "-" + elementName;
+    }
+    return id;
+};
 const getAnswerLengthId = () => "answer-length";
 /* main */
 let activeRound = 0;
@@ -19,6 +26,7 @@ play(5);
 function play(answerLength) {
     const playBoard = document.getElementById(getPlayBoardId());
     const spinner = document.createElement("div");
+    const answerSheet = document.getElementById(getAnswerModalElementId("body"));
     spinner.className = "spinner-border text-secondary m-3";
     playBoard === null || playBoard === void 0 ? void 0 : playBoard.append(spinner);
     fetch(`https://random-word-api.herokuapp.com/word?length=${answerLength}`).then((res) => res.json())
@@ -27,6 +35,7 @@ function play(answerLength) {
         if (data != null && data.length > 0) {
             const word = data[0];
             addRound(playBoard, activeRound, word);
+            answerSheet.append(word);
             console.log(word);
         }
     })
@@ -95,7 +104,7 @@ function addRound(playBoard, round, answer) {
         const submitButton = document.createElement("button");
         submitButton.id = getSubmitButtonId(round);
         submitButton.innerText = "SUBMIT";
-        submitButton.className = "submit-btn";
+        submitButton.className = "custom-btn1";
         submitButton.addEventListener("click", (e) => {
             const isAllInputValueExist = checkInputValue(round);
             if (isAllInputValueExist) {

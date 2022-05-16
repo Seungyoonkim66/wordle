@@ -10,6 +10,13 @@ const getFinishModalElementId = (elementName?:string):string => {
     }
     return id;
 }
+const getAnswerModalElementId = (elementName?:string):string => {
+    let id = "answer-modal"
+    if(elementName != null){
+        id = id + "-" + elementName;
+    }
+    return id;
+}
 const getAnswerLengthId = () => "answer-length";
 
 /* main */
@@ -21,6 +28,7 @@ play(5)
 function play (answerLength:number):void {
     const playBoard = document.getElementById(getPlayBoardId());
     const spinner = document.createElement("div") as HTMLDivElement;
+    const answerSheet = document.getElementById(getAnswerModalElementId("body")) as HTMLDivElement;
     spinner.className = "spinner-border text-secondary m-3";
     playBoard?.append(spinner);
     
@@ -30,6 +38,7 @@ function play (answerLength:number):void {
         if(data != null && data.length > 0){
             const word:string = data[0];
             addRound(playBoard, activeRound, word);
+            answerSheet.append(word);
             console.log(word);
         }
     })
@@ -104,7 +113,7 @@ function addRound(playBoard:HTMLElement | null, round:number, answer:string):voi
         const submitButton:HTMLButtonElement = document.createElement("button");
         submitButton.id = getSubmitButtonId(round);
         submitButton.innerText = "SUBMIT";
-        submitButton.className = "submit-btn";
+        submitButton.className = "custom-btn1";
         submitButton.addEventListener("click", (e:Event) => {
             const isAllInputValueExist:boolean = checkInputValue(round);
             if(isAllInputValueExist){
