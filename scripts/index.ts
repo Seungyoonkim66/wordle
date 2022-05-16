@@ -45,11 +45,12 @@ function play (answerLength:number):void {
 function setAnswerLength(initValue:number){
     const selector =  document.getElementById(getAnswerLengthId()) as HTMLInputElement;
     const playBoard = document.getElementById(getPlayBoardId()) as HTMLDivElement;
-    selector.removeEventListener("change", () => {})
-    selector.addEventListener("change", () => {
+    selector.removeEventListener("change", (e) => {})
+    selector.addEventListener("change", (e) => {
         if(Number(selector.value) != initValue){
             playBoard.childNodes.forEach(c => c.remove());
             play(Number(selector.value));
+            e.stopImmediatePropagation();
         }
     })
     

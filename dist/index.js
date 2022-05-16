@@ -40,11 +40,12 @@ function play(answerLength) {
 function setAnswerLength(initValue) {
     const selector = document.getElementById(getAnswerLengthId());
     const playBoard = document.getElementById(getPlayBoardId());
-    selector.removeEventListener("change", () => { });
-    selector.addEventListener("change", () => {
+    selector.removeEventListener("change", (e) => { });
+    selector.addEventListener("change", (e) => {
         if (Number(selector.value) != initValue) {
             playBoard.childNodes.forEach(c => c.remove());
             play(Number(selector.value));
+            e.stopImmediatePropagation();
         }
     });
 }
