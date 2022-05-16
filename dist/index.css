@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+}
 
 /* 답 입력 칸 */
 .box-container > input {
@@ -14,24 +15,30 @@
   margin: 0.5rem;
   border-radius: 0;
   border: 0;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 /* input focus 효과 제거 */
 input:focus {
-  outline: none; }
+  outline: none;
+}
 
 /* input 상태 표시 */
 .basic {
-  background-color: lightgray; }
+  background-color: lightgray;
+}
 
 .correct {
-  background-color: lightgoldenrodyellow; }
+  background-color: lightgoldenrodyellow;
+}
 
 .correct-correct {
-  background-color: lightblue; }
+  background-color: lightblue;
+}
 
 .wrong {
-  background-color: #ffb1ac; }
+  background-color: #ffb1ac;
+}
 
 /* 제출 버튼 */
 .submit-btn {
@@ -57,29 +64,47 @@ input:focus {
   touch-action: manipulation;
   vertical-align: middle;
   white-space: nowrap;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+}
 
 .submit-btn:hover {
   background-color: #F3F4F6;
   text-decoration: none;
-  transition-duration: 0.1s; }
+  transition-duration: 0.1s;
+}
 
 .submit-btn:disabled {
   background-color: #FAFBFC;
   border-color: rgba(27, 31, 35, 0.15);
   color: #959DA5;
-  cursor: default; }
+  cursor: default;
+}
 
 .submit-btn:active {
   background-color: #EDEFF2;
   box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
-  transition: none 0s; }
+  transition: none 0s;
+}
 
 .submit-btn:focus {
-  outline: 1px transparent; }
+  outline: 1px transparent;
+}
 
 .submit-btn:before {
-  display: none; }
+  display: none;
+}
 
 .submit-btn:-webkit-details-marker {
-  display: none; }
+  display: none;
+}
+
+.emp {
+  font-family: monospace;
+  background-color: #dde2e7;
+  padding: 0 4px;
+  border-radius: 4px;
+  color: #d63384;
+  word-wrap: break-word;
+}
+
+/*# sourceMappingURL=index.css.map */
